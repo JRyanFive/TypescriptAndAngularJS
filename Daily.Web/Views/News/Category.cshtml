@@ -1,0 +1,168 @@
+﻿<div ng-controller="NewsCtrl" ng-init="InitCategory(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+
+    <div class="wrapper">
+
+        <!-- BEGIN .main-content-left -->
+        <div class="main-content-left">
+
+            <div class="content-article-title" style="color:#9f3819;">
+                <h1>@ViewBag.CategoryLink.CategoryName</h1>
+                <div class="right-title-side">
+                    <a href="@Url.Content("~/")"><span class="icon-text">&#8962;</span>Trang chủ</a>
+                    @*<a href="#" class="orange"><span class="icon-text">&#59194;</span>Subscribe To RSS Feed</a>*@
+                </div>
+            </div>
+
+            <!-- BEGIN .main-content-split -->
+            <div class="main-content-split">
+
+                <!-- BEGIN .main-split-left -->
+                <div class="main-split-left">
+
+                    <!-- BEGIN .article-big-block -->
+                    <div class="article-big-block" ng-repeat="leftNews in LeftNewsList">
+                        <div class="article-photo">
+                            <a ng-href="~/{{leftNews.UrlNews}}">
+                                <img ng-src="~/{{leftNews.CoverImageUrl}}?w=330&h=200&mode=crop" class="setborder" alt={{leftNews.Title}} />
+                            </a>
+                        </div>
+
+                        <div class="article-header">
+                            <h2><a ng-href="~/{{leftNews.UrlNews}}">{{leftNews.Title}}</a></h2>
+                        </div>
+
+                        <div class="article-content">
+                            <p>{{leftNews.Sumary}}</p>
+                        </div>
+                        <a class="comment-icon">Dân trí</a><span class="time-display">{{leftNews.TimeDisplay}}</span>
+
+                        <!-- END .article-big-block -->
+                    </div>
+                </div>
+
+                <!-- BEGIN .main-split-right -->
+                <div class="main-split-right">
+                    <!-- BEGIN .article-small-block -->
+                    <div class="article-small-block" ng-repeat="rightNews in RightNewsList">
+                        <div class="article-header">
+                            <h2><a ng-href="~/{{rightNews.UrlNews}}">{{rightNews.Title}}</a></h2>
+                        </div>
+                        <div class="article-photo">
+                            <a ng-href="~/{{rightNews.UrlNews}}">
+                                <img ng-src="~/{{rightNews.CoverImageUrl}}?w=140&h=110&mode=crop" class="setborder" alt={{rightNews.Title}} />
+                            </a>
+                        </div>
+
+                        <div class="article-content">
+                            <p>{{rightNews.Sumary}}</p>
+                        </div>
+                        <a class="comment-icon">Dân trí</a><span class="time-display">{{rightNews.TimeDisplay}}</span>
+                        <!-- END .article-small-block -->
+                    </div>
+                    <!-- END .main-split-right -->
+                </div>
+
+                <div class="clear-float"></div>
+                <!-- END .main-content-split -->
+            </div>
+
+            <!-- BEGIN .main-nosplit -->
+            <div class="main-nosplit">
+
+
+                <!-- BEGIN .page-pager -->
+                <div class="page-pager">
+                    <a href="#" class="prev"><span class="icon-text">&#59229;</span>Previous Page</a>
+                    <a href="#">1</a>
+                    <span>2</span>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#" class="next">Next Page<span class="icon-text">&#59230;</span></a>
+                    <!-- END .page-pager -->
+                </div>
+                <!-- END .main-nosplit -->
+            </div>
+
+            <!-- END .main-content-left -->
+        </div>
+
+        <!-- BEGIN .main-content-right -->
+        <div class="main-content-right">
+
+            <!-- BEGIN .main-content-split -->
+            <div class="main-content-split">
+
+                <!-- BEGIN .main-split-left -->
+                <div class="main-split-left">
+
+                    <!-- END .panel -->
+                    <div class="panel">
+                        <h3>Tiêu điểm</h3>
+                        <div>
+
+                            <!-- BEGIN .article-middle-block -->
+                            <div class="article-middle-block" ng-repeat="fn in FocusNewsList">
+
+                                <div class="article-photo">
+                                    <a ng-href="~/{{fn.UrlNews}}">
+                                        <img ng-src="~/{{fn.CoverImageUrl}}" class="setborder" alt={{fn.Title}} style="max-width: 100%;" />
+                                        @*<img src="images/photos/image-36.jpg" class="setborder" alt="" />*@
+                                    </a>
+                                </div>
+
+                                <div class="article-header">
+                                    <h2><a ng-href="~/{{fn.UrlNews}}">{{fn.Title}}</a></h2><a class="comment-icon">Dân trí</a><span class="time-display">{{fn.TimeDisplay}}</span>
+                                </div>
+
+
+                                <!-- END .article-middle-block -->
+                            </div>
+
+                        </div>
+                        <!-- END .panel -->
+                    </div>
+                    <!-- END .main-split-left -->
+                </div>
+
+                <!-- BEGIN .main-split-right -->
+                <div class="main-split-right">
+                    <!-- END .panel -->
+                    <div class="panel">
+                        <h3  style="background:#a21d1d;">Đừng bỏ qua</h3>
+                        <div>
+
+                            <!-- BEGIN .article-middle-block -->
+                            <div class="article-middle-block" ng-repeat="inews in InterestingNewsList">
+
+                                <div class="article-photo">
+                                    <a ng-href="~/{{inews.UrlNews}}">
+                                        <img ng-src="~/{{inews.CoverImageUrl}}" class="setborder" alt={{inews.Title}} style="max-width: 100%;" />
+                                    </a>
+                                </div>
+
+                                <div class="article-header">
+                                    <h2><a ng-href="~/{{inews.UrlNews}}">{{inews.Title}}</a></h2><a class="comment-icon">Dân trí</a><span class="time-display">{{inews.TimeDisplay}}</span>
+                                </div>
+
+
+                                <!-- END .article-middle-block -->
+                            </div>
+
+                        </div>
+                        <!-- END .panel -->
+                    </div>
+                </div>
+                <!-- END .main-content-split -->
+            </div>
+
+
+            <!-- END .main-content-right -->
+        </div>
+
+        <div class="clear-float"></div>
+
+        <!-- END .wrapper -->
+    </div>
+</div>

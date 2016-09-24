@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily.LeechEngine", "Daily.LeechEngine\Daily.LeechEngine.csproj", "{440255A7-BDFB-482A-B7EF-C99DEF5A671F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyTest", "DailyTest\DailyTest.csproj", "{671313A2-D84D-4339-8A7A-3E7FCD7C9E93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily.Models", "Daily.Models\Daily.Models.csproj", "{C61CD746-C940-4F57-B6AB-F8973E7899E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyLeech", "DailyLeech\DailyLeech.csproj", "{44FE118D-5E29-4741-968F-2D837E3C727F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily.DataAccess", "Daily.DataAccess\Daily.DataAccess.csproj", "{5FE112DD-74B0-40CF-AE76-55DAE83B1AC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily.Web", "Daily.Web\Daily.Web.csproj", "{AE8A55BA-4D89-4451-95AA-2C303243FAF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{440255A7-BDFB-482A-B7EF-C99DEF5A671F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{440255A7-BDFB-482A-B7EF-C99DEF5A671F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{440255A7-BDFB-482A-B7EF-C99DEF5A671F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{440255A7-BDFB-482A-B7EF-C99DEF5A671F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{671313A2-D84D-4339-8A7A-3E7FCD7C9E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671313A2-D84D-4339-8A7A-3E7FCD7C9E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671313A2-D84D-4339-8A7A-3E7FCD7C9E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671313A2-D84D-4339-8A7A-3E7FCD7C9E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61CD746-C940-4F57-B6AB-F8973E7899E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61CD746-C940-4F57-B6AB-F8973E7899E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61CD746-C940-4F57-B6AB-F8973E7899E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61CD746-C940-4F57-B6AB-F8973E7899E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44FE118D-5E29-4741-968F-2D837E3C727F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44FE118D-5E29-4741-968F-2D837E3C727F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44FE118D-5E29-4741-968F-2D837E3C727F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44FE118D-5E29-4741-968F-2D837E3C727F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FE112DD-74B0-40CF-AE76-55DAE83B1AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE112DD-74B0-40CF-AE76-55DAE83B1AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE112DD-74B0-40CF-AE76-55DAE83B1AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE112DD-74B0-40CF-AE76-55DAE83B1AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE8A55BA-4D89-4451-95AA-2C303243FAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE8A55BA-4D89-4451-95AA-2C303243FAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE8A55BA-4D89-4451-95AA-2C303243FAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE8A55BA-4D89-4451-95AA-2C303243FAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://vietnamproteam.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Daily.DataAccess\\Daily.DataAccess.csproj
+		SccProjectName1 = Daily.DataAccess
+		SccLocalPath1 = Daily.DataAccess
+		SccProjectUniqueName2 = Daily.LeechEngine\\Daily.LeechEngine.csproj
+		SccProjectName2 = Daily.LeechEngine
+		SccLocalPath2 = Daily.LeechEngine
+		SccProjectUniqueName3 = Daily.Models\\Daily.Models.csproj
+		SccProjectName3 = Daily.Models
+		SccLocalPath3 = Daily.Models
+		SccProjectUniqueName4 = Daily.Web\\Daily.Web.csproj
+		SccProjectName4 = Daily.Web
+		SccLocalPath4 = Daily.Web
+		SccProjectUniqueName5 = DailyLeech\\DailyLeech.csproj
+		SccProjectName5 = DailyLeech
+		SccLocalPath5 = DailyLeech
+		SccProjectUniqueName6 = DailyTest\\DailyTest.csproj
+		SccProjectName6 = DailyTest
+		SccLocalPath6 = DailyTest
+	EndGlobalSection
+EndGlobal

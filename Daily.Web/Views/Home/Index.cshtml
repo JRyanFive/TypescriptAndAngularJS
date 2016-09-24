@@ -1,0 +1,336 @@
+﻿@{
+    ViewBag.Title = "DailyTinTuc - Tin tức tổng hợp, báo mới cập nhật nhanh nhất 24H";
+}
+@model Daily.Web.Models.HomeViewModel
+
+<div ng-controller="HomeCtrl" ng-init="InitHome(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+
+    <div class="wrapper">
+
+        <!-- BEGIN .main-content-left -->
+        <div class="main-content-left">
+
+            <div class="main-content-split">
+
+                <!-- BEGIN .main-split-left -->
+                <div class="main-split-left">
+                    <div ng-repeat="topLeft in TopLeftNewsList">
+                        <!-- BEGIN .article-big-block -->
+                        <div class="article-big-block">
+                            <div class="article-photo">
+                                <a ng-href="~/{{topLeft.UrlNews}}">
+                                    <img ng-src="~/{{topLeft.CoverImageUrl}}?w=330&h=200&mode=crop" class="setborder" alt={{topLeft.Title}} />
+                                </a>
+                            </div>
+
+                            <div class="article-header">
+                                <h2>
+                                    <a ng-href="~/{{topLeft.UrlNews}}">{{topLeft.Title}}</a>
+                                </h2>
+                            </div>
+
+                            <div class="article-content">
+                                <p>{{topLeft.Sumary}}</p>
+                            </div>
+                            <a class="comment-icon">Dân trí</a><span class="time-display">{{topLeft.TimeDisplay}}</span>
+
+                            <!-- END .article-big-block -->
+                        </div>
+                    </div>
+
+                    <!-- BEGIN .content-panel -->
+                    <div class="content-panel">
+                        <div class="panel-header">
+                            <b><span class="icon-text">&#128256;</span>Xã hội</b>
+                        </div>
+                        <div class="panel-content">
+                            <!-- BEGIN .article-big-block -->
+                            <div class="article-big-block">
+                                <div class="article-photo">
+                                    <a ng-href="~/{{SocietyNewsFirst.UrlNews}}">
+                                        <img ng-src="~/{{SocietyNewsFirst.CoverImageUrl}}?w=330&h=200&mode=crop" class="setborder" alt={{SocietyNewsFirst.Title}} />
+                                    </a>
+                                </div>
+
+                                <div class="article-header">
+                                    <h2>
+                                        <a ng-href="~/{{SocietyNewsFirst.UrlNews}}">{{SocietyNewsFirst.Title}}</a>
+                                    </h2>
+                                </div>
+
+                                <div class="article-content">
+                                    <p>{{SocietyNewsFirst.Sumary}}</p>
+                                    <a class="comment-icon">Dân trí</a><span class="time-display">{{SocietyNewsFirst.TimeDisplay}}</span>
+                                </div>
+
+                                <!-- END .article-big-block -->
+                            </div>
+
+                            <!-- BEGIN .article-array -->
+                            <ul class="article-array content-category" ng-repeat="slist in SocietyNewsList">
+                                <li>
+                                    <a ng-href="~/{{slist.UrlNews}}">{{slist.Title}}</a><a class="comment-icon">Dân trí</a><span class="time-display">{{slist.TimeDisplay}}</span>
+                                </li>
+                                <!-- END .article-array -->
+                            </ul>
+
+                        </div>
+                        <!-- END .content-panel -->
+                    </div>
+
+
+
+                    <!-- BEGIN .content-panel -->
+                    <div class="content-panel">
+                        <div class="panel-header">
+                            <b style="background:#6d8b13;"><span class="icon-text">&#9871;</span>Thế giới</b>
+                        </div>
+                        <div class="panel-content">
+
+                            <!-- BEGIN .article-big-block -->
+                            <div class="article-big-block">
+                                <div class="article-photo">
+                                    <a ng-href="~/{{WorldNewsFirst.UrlNews}}">
+                                        <img ng-src="~/{{WorldNewsFirst.CoverImageUrl}}?w=330&h=200&mode=crop" class="setborder" alt={{WorldNewsFirst.Title}} />
+                                    </a>
+                                </div>
+
+                                <div class="article-header">
+                                    <h2><a ng-href="~/{{WorldNewsFirst.UrlNews}}">{{WorldNewsFirst.Title}}</a></h2>
+                                </div>
+
+                                <div class="article-content">
+                                    <p>{{WorldNewsFirst.Sumary}}</p>
+                                    <a class="comment-icon">Dân trí</a><span class="time-display">{{WorldNewsFirst.TimeDisplay}}</span>
+                                </div>
+
+                                <!-- END .article-big-block -->
+                            </div>
+
+                            <!-- BEGIN .article-array -->
+                            <ul class="article-array content-category" ng-repeat="wl in WorldNewsList">
+                                <li>
+                                    <a ng-href="~/{{wl.UrlNews}}">{{wl.Title}}</a><a class="comment-icon">Dân trí</a><span class="time-display">{{wl.TimeDisplay}}</span>
+                                </li>
+                                <!-- END .article-array -->
+                            </ul>
+
+                        </div>
+                        <!-- END .content-panel -->
+                    </div>
+
+
+                    <div class="content-panel">
+                        <div class="panel-header">
+                            <b style="background:#6d8b13;"><span class="icon-text">&#9871;</span>Pháp luật</b>
+                        </div>
+                        <div class="panel-content">
+
+                            <!-- BEGIN .article-big-block -->
+                            <div class="article-big-block">
+                                <div class="article-photo">
+                                    <a ng-href="~/{{LawNewsFirst.UrlNews}}">
+                                        @*<img src="images/photos/image-11.jpg" class="setborder" alt="" />*@
+                                        <img ng-src="~/{{LawNewsFirst.CoverImageUrl}}?w=330&h=200&mode=crop" class="setborder" alt={{LawNewsFirst.Title}} />
+                                    </a>
+                                </div>
+
+                                <div class="article-header">
+                                    <h2><a ng-href="~/{{LawNewsFirst.UrlNews}}">{{LawNewsFirst.Title}}</a></h2>
+                                </div>
+
+                                <div class="article-content">
+                                    <p>{{LawNewsFirst.Sumary}}</p>
+                                    <a class="comment-icon">Dân trí</a><span class="time-display">{{LawNewsFirst.TimeDisplay}}</span>
+                                </div>
+                                <!-- END .article-big-block -->
+                            </div>
+
+                            <!-- BEGIN .article-array -->
+                            <ul class="article-array content-category" ng-repeat="lawList in LawNewsList">
+                                <li>
+                                    <a ng-href="~/{{lawList.UrlNews}}">{{lawList.Title}}</a><a class="comment-icon">Dân trí</a><span class="time-display">{{lawList.TimeDisplay}}</span>
+                                </li>
+                                <!-- END .article-array -->
+                            </ul>
+
+                        </div>
+                        <!-- END .content-panel -->
+                    </div>
+                    <!-- END .main-split-left -->
+                </div>
+
+                <!-- BEGIN .main-split-right -->
+                <div class="main-split-right">
+
+                    <div ng-repeat="topRight in TopRightNewsList">
+                        <!-- BEGIN .article-small-block -->
+                        <div class="article-small-block">
+                            <div class="article-header">
+                                <h2>
+                                    <a ng-href="~/{{topRight.UrlNews}}">{{topRight.Title}}</a>
+                                </h2>
+                            </div>
+
+                            <div class="article-photo">
+                                <a ng-href="~/{{topRight.UrlNews}}">
+                                    <img ng-src="~/{{topRight.CoverImageUrl}}?w=140&h=110&mode=crop" class="setborder" alt={{topRight.Title}} />
+                                </a>
+                            </div>
+
+                            <div class="article-content">
+                                <p>{{topRight.Sumary}}</p>
+                            </div>
+
+                            <a class="comment-icon">Dân trí</a><span class="time-display">{{topRight.TimeDisplay}}</span>
+                            <!-- END .article-small-block -->
+                        </div>
+                    </div>
+
+                    <!-- BEGIN .content-panel -->
+                    <div class="content-panel">
+                        <div class="panel-header">
+                            <b style="background:#9f3819;"><span class="icon-text">&#9871;</span>Thể thao</b>
+                        </div>
+                        <div class="panel-content">
+
+                            <!-- BEGIN .article-big-block -->
+                            <div class="article-big-block">
+                                <div class="article-photo">
+                                    <a ng-href="~/{{SportNewsFirst.UrlNews}}">
+                                        <img ng-src="~/{{SportNewsFirst.CoverImageUrl}}?w=330&h=200&mode=crop" class="setborder" alt={{SportNewsFirst.Title}} />
+                                    </a>
+                                </div>
+
+                                <div class="article-header">
+                                    <h2><a ng-href="~/{{SportNewsFirst.UrlNews}}">{{SportNewsFirst.Title}}</a></h2>
+                                </div>
+
+                                <div class="article-content">
+                                    <p>{{SportNewsFirst.Sumary}}</p>
+                                    <a class="comment-icon">Dân trí</a><span class="time-display">{{SportNewsFirst.TimeDisplay}}</span>
+                                </div>
+
+                                <!-- END .article-big-block -->
+                            </div>
+
+                            <!-- BEGIN .article-array -->
+                            <ul class="article-array content-category" ng-repeat="sl in SportNewsList">
+                                <li>
+                                    <a ng-href="~/{{sl.UrlNews}}">{{sl.Title}}</a><a class="comment-icon">Dân trí</a><span class="time-display">{{sl.TimeDisplay}}</span>
+                                </li>
+                                <!-- END .article-array -->
+                            </ul>
+
+
+
+                        </div>
+                        <!-- END .content-panel -->
+                    </div>
+
+
+                    <!-- END .main-split-right -->
+                </div>
+
+                <div class="clear-float"></div>
+
+                <!-- END .main-content-split -->
+            </div>
+
+            <!-- BEGIN .main-nosplit -->
+            <div class="main-nosplit">
+
+                <!-- BEGIN .content-panel -->
+                <div class="content-panel">
+                    <div class="panel-header">
+                        <b style="background:#a21d1d;"><span class="icon-text">&#9871;</span>Đời sống</b>
+                    </div>
+                    <div class="panel-content">
+
+                        <!-- BEGIN .article-array -->
+                        <ul class="article-array content-category" ng-repeat="ll in LifeNewsList">
+                            <li>
+                                <a ng-href="~/{{ll.UrlNews}}">{{ll.Title}}</a><a class="comment-icon">Dân trí</a><span class="time-display">{{ll.TimeDisplay}}</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- END .content-panel -->
+                </div>
+
+            </div>
+
+            <!-- END .main-content-left -->
+        </div>
+
+        <!-- BEGIN .main-content-right -->
+        <div class="main-content-right">
+
+            <!-- BEGIN .main-nosplit -->
+            <div class="main-nosplit">
+
+                <!-- BEGIN .panel -->
+                <div class="panel">
+                    <h3>Tin nóng trong ngày</h3>
+                    <div>
+                        <!-- BEGIN .article-side-block -->
+                        <div class="article-side-block">
+                            <div class="article-photo">
+                                <a ng-href="~/{{HotNewsToday.UrlNews}}">
+                                    <img ng-src="~/{{HotNewsToday.CoverImageUrl}}" class="setborder" alt="{{HotNewsToday.Title}}" style="max-width: 100%;" />
+                                </a>
+                            </div>
+
+                            <div class="article-header">
+                                <h2><a ng-href="~/{{HotNewsToday.UrlNews}}">{{HotNewsToday.Title}}</a></h2>
+                            </div>
+
+                            <a class="comment-icon">Dân trí</a><span class="time-display">{{HotNewsToday.TimeDisplay}}</span>
+                            <!-- END .article-side-block -->
+                        </div>
+
+
+                        <!-- BEGIN .article-array -->
+                        <ul class="article-array content-category" ng-repeat="hotL in HotNewsTodayList">
+                            <li>
+                                <a ng-href="~/{{hotL.UrlNews}}">{{hotL.Title}}</a><a class="comment-icon">Dân trí</a><span class="time-display">{{hotL.TimeDisplay}}</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- END .panel -->
+                </div>
+
+                <!-- BEGIN .panel -->
+                <div class="panel">
+                    <h3>Giải trí</h3>
+                    <div ng-repeat="enL in EntertaimentNewsList">
+                        <!-- BEGIN .article-side-block -->
+                        <div class="article-side-block" style="padding-bottom: 18px;">
+                            <div class="article-photo">
+                                <a ng-href="~/{{enL.UrlNews}}">
+                                    <img ng-src="~/{{enL.CoverImageUrl}}" class="setborder" alt="{{enL.Title}}" style="max-width: 100%;" />
+                                </a>
+                            </div>
+
+                            <div class="article-header">
+                                <h2><a ng-href="~/{{enL.UrlNews}}">{{enL.Title}}</a></h2><a class="comment-icon">Dân trí</a><span class="time-display">{{enL.TimeDisplay}}</span>
+                            </div>
+
+                            <!-- END .article-side-block -->
+                        </div>
+                    </div>
+                    <!-- END .panel -->
+                </div>
+
+                <!-- END .main-nosplit -->
+            </div>
+
+            <!-- END .main-content-right -->
+        </div>
+
+        <div class="clear-float"></div>
+
+        <!-- END .wrapper -->
+    </div>
+</div>

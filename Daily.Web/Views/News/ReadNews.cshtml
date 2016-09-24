@@ -1,0 +1,257 @@
+﻿<div ng-controller="NewsCtrl" ng-init="InitNews(@Newtonsoft.Json.JsonConvert.SerializeObject(Model))">
+
+    <div class="wrapper">
+
+        <!-- BEGIN .main-content-left -->
+        <div class="main-content-left">
+            @*<div class="social-icons-float">
+                    <span class="soc-header">Share</span>
+                    <span class="social-icon">
+                        <span class="social-count">293<span class="social-arrow">&nbsp;</span></span>
+                        <a href="#" class="social-button" style="background:#495fbd;"><span class="icon-text">&#62220;</span><font>Share</font></a>
+                    </span>
+                    <span class="social-icon">
+                        <span class="social-count">34<span class="social-arrow">&nbsp;</span></span>
+                        <a href="#" class="social-button" style="background:#43bedd;"><span class="icon-text">&#62217;</span><font>Tweet</font></a>
+                    </span>
+                    <span class="social-icon">
+                        <span class="social-count">29<span class="social-arrow">&nbsp;</span></span>
+                        <a href="#" class="social-button" style="background:#df6149;"><span class="icon-text">&#62223;</span><font>+1</font></a>
+                    </span>
+                    <span class="social-icon">
+                        <span class="social-count">18<span class="social-arrow">&nbsp;</span></span>
+                        <a href="#" class="social-button" style="background:#d23131;"><span class="icon-text">&#62226;</span><font>Share</font></a>
+                    </span>
+                    <span class="social-icon">
+                        <span class="social-count">170<span class="social-arrow">&nbsp;</span></span>
+                        <a href="#" class="social-button" style="background:#264c84;"><span class="icon-text">&#62232;</span><font>Share</font></a>
+                    </span>
+                </div>*@
+
+            <div class="content-article-title">
+                <ul class="linktree">
+                    <li><a href="@Url.Content("~/")">Daily Tin Tức</a> <i class="fa fa-angle-double-right" style="margin: 3px 0 0 3px"></i></li>
+                    <li ng-repeat="ltree in LinkTree"><a ng-href="~/{{ltree.CategoryLink}}">{{ltree.CategoryName}}</a> <i ng-hide="$last" class="fa fa-angle-double-right" style="margin: 3px 0 0 3px"></i></li>
+                </ul>
+
+                <div class="right-title-side">
+                    <p><i class="fa fa-clock-o"></i>&nbsp;{{ViewNews.CreatedTimeDisplay}}</p>
+                </div>
+            </div>
+
+            <!-- <div class="breaking-news" style="margin-top:-15px;">
+
+                <div class="breaking-title"><span class="breaking-icon">&nbsp;</span><b>Breaking News</b><div class="the-corner"></div></div>
+
+                <div class="breaking-block">
+                    <ul>
+                        <li><a href="post.html">Lorem ipsum dolor sit amet et dolor adolescens sit</a><span>Ea cum tation populo dolores, ex modo falli oblique sit oblique sit. Sed cu omnium debitis qualisque...</span></li>
+                        <li><a href="post.html">Alia corpora ea vim, te erant viris bonorum sit, ei doming prompta vis</a><span>Ea cum tation populo dolores, ex modo falli oblique sit oblique sit. Sed cu omnium debitis qualisque...</span></li>
+                        <li><a href="post.html">Nam in mundi tractatos, audire atomorum qualisque ea eos</a><span>Ea cum tation populo dolores, ex modo falli oblique sit oblique sit. Sed cu omnium debitis qualisque...</span></li>
+                    </ul>
+                </div>
+
+                <div class="breaking-controls"><a href="#" class="breaking-arrow-left">&nbsp;</a><a href="#" class="breaking-arrow-right">&nbsp;</a><div class="clear-float"></div><div class="the-corner"></div></div>
+
+            </div> -->
+            <br/>
+            <div class="main-article-content">
+                <h1 class="article-title">{{ViewNews.Title}}</h1>
+               
+                <!-- BEGIN .shortcode-content -->
+                <div class="sumary-content">
+                    {{ViewNews.Sumary}}
+                </div>
+
+                <div class="shortcode-content">
+                    <div ng-bind-html="ViewNews.Content | unsafe"></div>
+                </div>
+                <div class="linksource">
+                    <div class="source"><b>Nguồn:</b> <input type="text" value="{{ViewNews.SourceLink}}"></div>
+                </div>
+            </div>
+            <!-- BEGIN .main-nosplit -->
+            <div class="main-nosplit">
+
+                <div class="article-share-bottom">
+                    <div class="tag-block">
+                        <a ng-repeat="tag in ViewNews.TagSearch" href="#">{{tag}}</a>
+                    </div>
+                    <div class="clear-float"></div>
+                </div>
+
+                <div class="article-share-bottom">
+
+                    <b>Share</b>
+                    <span class="social-icon">
+                        <a href="#" class="social-button" style="background:#495fbd;"><span class="icon-text">&#62220;</span><font>Share</font></a>
+                        <span class="social-count">293<span class="social-arrow">&nbsp;</span></span>
+                    </span>
+                    <span class="social-icon">
+                        <a href="#" class="social-button" style="background:#43bedd;"><span class="icon-text">&#62217;</span><font>Tweet</font></a>
+                        <span class="social-count">34<span class="social-arrow">&nbsp;</span></span>
+                    </span>
+                    <span class="social-icon">
+                        <a href="#" class="social-button" style="background:#df6149;"><span class="icon-text">&#62223;</span><font>+1</font></a>
+                        <span class="social-count">29<span class="social-arrow">&nbsp;</span></span>
+                    </span>
+                    <span class="social-icon">
+                        <a href="#" class="social-button" style="background:#d23131;"><span class="icon-text">&#62226;</span><font>Share</font></a>
+                        <span class="social-count">18<span class="social-arrow">&nbsp;</span></span>
+                    </span>
+                    <span class="social-icon">
+                        <a href="#" class="social-button" style="background:#264c84;"><span class="icon-text">&#62232;</span><font>Share</font></a>
+                        <span class="social-count">170<span class="social-arrow">&nbsp;</span></span>
+                    </span>
+                    <div class="clear-float"></div>
+                </div>
+                <!-- END .main-nosplit -->
+            </div>
+
+
+            <div class="content-article-title">
+                <h3>Ý kiến bạn đọc</h3>
+            </div>
+            <div class="comment-block">
+
+                <ol class="comments">
+                    <li>
+                        <div class="commment-content">
+                            <div class="user-avatar">
+                                <img src="images/no-avatar-60x60.jpg" class="setborder" alt="" title="" />
+                            </div>
+                            <strong class="user-nick"><a href="#">Ignasi Cleto</a></strong>
+                            <span class="time-stamp">April 25, 12:53</span>
+                            <div class="comment-text">
+                                <p>Usu inani perfecto quaestio in, id usu paulo eruditi salutandi. In eros prompta dolores nec, ut pro causae conclusionemque. In pro elit mundi dicunt. No odio diam interpretaris pri.</p>
+                            </div>
+                            <a href="#" class="icon-link"><span class="icon-text">&#59154;</span><span>Reply to this comment</span></a>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="main-nosplit">
+
+                <!-- BEGIN .content-panel -->
+                <div class="content-panel">
+                    <div class="panel-header">
+                        <b style="background: #175C73;"><span class="icon-text">&#9871;</span>Các bài đã đăng</b>
+                    </div>
+                    <div class="panel-content">
+
+                        <!-- BEGIN .article-array -->
+                        <ul class="article-array content-category" ng-repeat="ll in FocusNewsList">
+                            <li>
+                                <a ng-href="~/{{ll.UrlNews}}">{{ll.Title}}</a><a class="comment-icon">Dân trí</a><span class="time-display">{{ll.TimeDisplay}}</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- END .content-panel -->
+                </div>
+
+            </div>
+
+            <div class="main-nosplit">
+
+                <!-- BEGIN .content-panel -->
+                <div class="content-panel">
+                    <div class="panel-header">
+                        <b style="background:#a21d1d;"><span class="icon-text">&#9871;</span>Có thể bạn quan tâm</b>
+                    </div>
+                    <div class="panel-content">
+
+                        <!-- BEGIN .article-array -->
+                        <ul class="article-array content-category" ng-repeat="ll in FocusNewsList">
+                            <li>
+                                <a ng-href="~/{{ll.UrlNews}}">{{ll.Title}}</a><a class="comment-icon">Dân trí</a><span class="time-display">{{ll.TimeDisplay}}</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- END .content-panel -->
+                </div>
+
+            </div>
+            <!-- END .main-content-left -->
+        </div>
+
+        <!-- BEGIN .main-content-right -->
+        <div class="main-content-right">
+
+            <!-- BEGIN .main-content-split -->
+            <div class="main-content-split">
+
+                <!-- BEGIN .main-split-left -->
+                <div class="main-split-left">
+
+                    <!-- END .panel -->
+                    <div class="panel">
+                        <h3>Tiêu điểm</h3>
+                        <div>
+
+                            <!-- BEGIN .article-middle-block -->
+                            <div class="article-middle-block" ng-repeat="fn in FocusNewsList">
+
+                                <div class="article-photo">
+                                    <a href="post.html">
+                                        <img ng-src="~/{{fn.CoverImageUrl}}" class="setborder" alt={{fn.Title}} style="max-width: 100%;" />
+                                        @*<img src="images/photos/image-36.jpg" class="setborder" alt="" />*@
+                                    </a>
+                                </div>
+
+                                <div class="article-header">
+                                    <h2><a ng-href="~/{{fn.UrlNews}}">{{fn.Title}}</a></h2><a class="comment-icon">Dân trí</a><span class="time-display">{{fn.TimeDisplay}}</span>
+                                </div>
+
+
+                                <!-- END .article-middle-block -->
+                            </div>
+
+                        </div>
+                        <!-- END .panel -->
+                    </div>
+                    <!-- END .main-split-left -->
+                </div>
+
+                <!-- BEGIN .main-split-right -->
+                <div class="main-split-right">
+                    <!-- END .panel -->
+                    <div class="panel">
+                        <h3>Mới - Nóng</h3>
+                        <div>
+
+                            <!-- BEGIN .article-middle-block -->
+                            <div class="article-middle-block" ng-repeat="hn in HotNewsList">
+
+                                <div class="article-photo">
+                                    <a ng-href="~/{{hn.UrlNews}}">
+                                        <img ng-src="~/{{hn.CoverImageUrl}}" class="setborder" alt={{hn.Title}} style="max-width: 100%;" />
+                                    </a>
+                                </div>
+
+                                <div class="article-header">
+                                    <h2><a ng-href="~/{{hn.UrlNews}}">{{hn.Title}}</a></h2><a class="comment-icon">Dân trí</a><span class="time-display">{{hn.TimeDisplay}}</span>
+                                </div>
+                                <!-- END .article-middle-block -->
+                            </div>
+
+                        </div>
+                        <!-- END .panel -->
+                    </div>
+                    <!-- END .main-split-left -->
+                </div>
+                <!-- END .main-content-split -->
+            </div>
+
+
+            <!-- END .main-content-right -->
+        </div>
+
+        <div class="clear-float"></div>
+
+        <!-- END .wrapper -->
+    </div>
+
+</div>
